@@ -1,0 +1,14 @@
+{
+  "name": "template-typescript-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --incremental --p src",
+    "start": "npm run build && node dist/index.js sample --template typescript-backend",
+    "watch": "tsc --watch --incremental --p src"
+  },
+  "dependencies": {
+    "typescript": "^3.9.7"
+  }
+}
