@@ -1,6 +1,6 @@
 {
   "name": "@down-the-whole/create-dtw-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "main": "dist/index.js",
   "bin": {
@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build": "tsc --incremental --p src",
-    "start": "npm run build && node dist/index.js sample --template typescript-backend",
+    "start": "npm run build && node dist/index.js sample --template typescript-isomorphic && cd sample && echo $PWD && yarn && yarn run start",
     "watch": "tsc --watch --incremental --p src"
   },
   "dependencies": {

@@ -31,7 +31,8 @@ async function init() {
     const templateDir = path.join(
         __dirname,
         '..',
-        `template-${argv.t || argv.template || 'vue'}`
+        'templates',
+        argv.t || argv.template || 'typescript-isomorphic',
     )
 
     const write = async (file, content) => {
@@ -47,7 +48,11 @@ async function init() {
     }
 
     const files = await fs.readdir(templateDir)
-    for (const file of files.filter((f) => f !== 'package.json')) {
+    const filtered = files.filter((f) => {
+        return f !== 'package.json' || f !== 'node_modules'
+    })
+
+    for (const file of filtered) {
         await write(file, null)
     }
 
